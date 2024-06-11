@@ -1,0 +1,17 @@
+[%autowidth.stretch, cols="h,a"]
+|===
+|Base package
+|`fr.example.establishment`
+|Spring components
+|_Controllers_
+
+* `f.e.e.EstablishmentController`
+
+_Services_
+
+* `f.e.e.EstablishmentServiceInterface` (via `f.e.e.internal.domain.EstablishmentService`)
+|Published events
+|* `f.e.e.spi.event.EstablishmentDeletedEvent` created by:
+** `f.e.e.spi.external.ExternalService.publishDeleteEstablishmentEvent(…)`
+
+|===

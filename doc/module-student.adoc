@@ -1,0 +1,18 @@
+[%autowidth.stretch, cols="h,a"]
+|===
+|Base package
+|`fr.example.student`
+|Spring components
+|_Controllers_
+
+* `f.e.s.StudentController`
+
+_Services_
+
+* `f.e.s.StudentServiceInterface` (via `f.e.s.internal.domain.StudentService`)
+|Bean references
+|* `f.e.e.EstablishmentServiceInterface` (in Establishment)
+* `f.e.c.ClassroomServiceInterface` (in Classroom)
+|Events listened to
+|* `f.e.e.spi.event.EstablishmentDeletedEvent`
+|===

@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+
+  modulith-db:
+    image: postgres:16.3-alpine3.20
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: modularmonolith
+      POSTGRES_USER: modularmonolith
+      POSTGRES_DB: modularmonolith

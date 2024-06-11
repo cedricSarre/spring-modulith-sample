@@ -1,0 +1,27 @@
+@startuml
+title SpringModulithApplication
+
+top to bottom direction
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary("SpringModulithApplication.SpringModulithApplication_boundary", "SpringModulithApplication", $tags="") {
+  Component(SpringModulithApplication.SpringModulithApplication.core, "core", "Module", "", $tags="")
+  Component(SpringModulithApplication.SpringModulithApplication.Student, "Student", "Module", "", $tags="")
+  Component(SpringModulithApplication.SpringModulithApplication.Classroom, "Classroom", "Module", "", $tags="")
+  Component(SpringModulithApplication.SpringModulithApplication.Establishment, "Establishment", "Module", "", $tags="")
+}
+
+Rel_D(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.core, "depends on", $tags="")
+Rel_D(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.Establishment, "uses", $tags="")
+Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Establishment, "listens to", $tags="")
+Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.core, "depends on", $tags="")
+Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Establishment, "uses", $tags="")
+Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Classroom, "uses", $tags="")
+Rel_D(SpringModulithApplication.SpringModulithApplication.Establishment, SpringModulithApplication.SpringModulithApplication.core, "depends on", $tags="")
+Rel_D(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.Establishment, "listens to", $tags="")
+
+SHOW_LEGEND(true)
+@enduml
