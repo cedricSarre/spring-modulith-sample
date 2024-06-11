@@ -1,3 +1,5 @@
+# Spring Modulith Sample
+
 Sample application using Spring Modulith to show how to implement:
 
 * Modules by package
@@ -7,7 +9,7 @@ Sample application using Spring Modulith to show how to implement:
 * Automatically Generated Documentation
 * Tests
 
-This application is based on Java 22 and Maven.
+This application is based on Java 21 and Maven.
 
 Maven Wrapper is available to build the app.
 
