@@ -1,27 +1,28 @@
 @startuml
+set separator none
 title Student
 
 top to bottom direction
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
 
 Container_Boundary("SpringModulithApplication.SpringModulithApplication_boundary", "SpringModulithApplication", $tags="") {
-  Component(SpringModulithApplication.SpringModulithApplication.core, "core", "Module", "", $tags="")
-  Component(SpringModulithApplication.SpringModulithApplication.Student, "Student", "Module", "", $tags="")
-  Component(SpringModulithApplication.SpringModulithApplication.Classroom, "Classroom", "Module", "", $tags="")
-  Component(SpringModulithApplication.SpringModulithApplication.Establishment, "Establishment", "Module", "", $tags="")
+  Component(SpringModulithApplication.SpringModulithApplication.core, "core", $techn="Module", $descr="", $tags="", $link="")
+  Component(SpringModulithApplication.SpringModulithApplication.Student, "Student", $techn="Module", $descr="", $tags="", $link="")
+  Component(SpringModulithApplication.SpringModulithApplication.Establishment, "Establishment", $techn="Module", $descr="", $tags="", $link="")
+  Component(SpringModulithApplication.SpringModulithApplication.Classroom, "Classroom", $techn="Module", $descr="", $tags="", $link="")
 }
 
-Rel_D(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.core, "depends on", $tags="")
-Rel_D(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.Establishment, "uses", $tags="")
-Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Establishment, "listens to", $tags="")
-Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.core, "depends on", $tags="")
-Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Establishment, "uses", $tags="")
-Rel_D(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Classroom, "uses", $tags="")
-Rel_D(SpringModulithApplication.SpringModulithApplication.Establishment, SpringModulithApplication.SpringModulithApplication.core, "depends on", $tags="")
-Rel_D(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.Establishment, "listens to", $tags="")
+Rel(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Establishment, "uses", $techn="", $tags="", $link="")
+Rel(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Classroom, "uses", $techn="", $tags="", $link="")
+Rel(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.Establishment, "listens to", $techn="", $tags="", $link="")
+Rel(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.core, "depends on", $techn="", $tags="", $link="")
+Rel(SpringModulithApplication.SpringModulithApplication.Classroom, SpringModulithApplication.SpringModulithApplication.Establishment, "uses", $techn="", $tags="", $link="")
+Rel(SpringModulithApplication.SpringModulithApplication.Establishment, SpringModulithApplication.SpringModulithApplication.core, "depends on", $techn="", $tags="", $link="")
+Rel(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.Establishment, "listens to", $techn="", $tags="", $link="")
+Rel(SpringModulithApplication.SpringModulithApplication.Student, SpringModulithApplication.SpringModulithApplication.core, "depends on", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

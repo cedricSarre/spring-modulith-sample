@@ -7,7 +7,6 @@ import fr.example.establishment.spi.dto.EstablishmentDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Import;
-import org.springframework.modulith.events.config.EventPublicationAutoConfiguration;
 import org.springframework.modulith.test.ApplicationModuleTest;
 
 import static io.restassured.RestAssured.given;
@@ -17,8 +16,7 @@ import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @ApplicationModuleTest(extraIncludes = "core", webEnvironment = RANDOM_PORT)
-@Import({TestContainersConfiguration.class, MultiModuleFlywayMigrationStrategy.class,
-        EventPublicationAutoConfiguration.class})
+@Import({TestContainersConfiguration.class, MultiModuleFlywayMigrationStrategy.class})
 public class EstablishmentIntegrationTests {
     @LocalServerPort
     public Integer serverPort;

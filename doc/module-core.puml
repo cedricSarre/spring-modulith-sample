@@ -1,14 +1,15 @@
 @startuml
+set separator none
 title core
 
 top to bottom direction
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
 
 Container_Boundary("SpringModulithApplication.SpringModulithApplication_boundary", "SpringModulithApplication", $tags="") {
-  Component(SpringModulithApplication.SpringModulithApplication.core, "core", "Module", "", $tags="")
+  Component(SpringModulithApplication.SpringModulithApplication.core, "core", $techn="Module", $descr="", $tags="", $link="")
 }
 
 

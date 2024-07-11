@@ -1,18 +1,19 @@
 @startuml
+set separator none
 title Establishment
 
 top to bottom direction
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
 
 Container_Boundary("SpringModulithApplication.SpringModulithApplication_boundary", "SpringModulithApplication", $tags="") {
-  Component(SpringModulithApplication.SpringModulithApplication.core, "core", "Module", "", $tags="")
-  Component(SpringModulithApplication.SpringModulithApplication.Establishment, "Establishment", "Module", "", $tags="")
+  Component(SpringModulithApplication.SpringModulithApplication.core, "core", $techn="Module", $descr="", $tags="", $link="")
+  Component(SpringModulithApplication.SpringModulithApplication.Establishment, "Establishment", $techn="Module", $descr="", $tags="", $link="")
 }
 
-Rel_D(SpringModulithApplication.SpringModulithApplication.Establishment, SpringModulithApplication.SpringModulithApplication.core, "depends on", $tags="")
+Rel(SpringModulithApplication.SpringModulithApplication.Establishment, SpringModulithApplication.SpringModulithApplication.core, "depends on", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml
